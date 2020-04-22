@@ -1,0 +1,1 @@
+web: gunicorn app:server --timeout 90 --workers 3 --log-level DEBUG --log-file -

@@ -1,0 +1,199 @@
+Entidad,Porcentage,Año
+Aguascalientes,6.7,2008
+Baja California,5.1,2008
+Baja California Sur,10.3,2008
+Campeche,19.3,2008
+Coahuila de Zaragoza,3.9,2008
+Colima,6.7,2008
+Chiapas,25.6,2008
+Chihuahua,7.0,2008
+Ciudad de México,4.9,2008
+Durango,7.6,2008
+Guanajuato,9.8,2008
+Guerrero,31.2,2008
+Hidalgo,11.5,2008
+Jalisco,6.7,2008
+México,10.8,2008
+Michoacán de Ocampo,12.8,2008
+Morelos,10.5,2008
+Nayarit,7.5,2008
+Nuevo León,6.7,2008
+Oaxaca,21.9,2008
+Puebla,16.2,2008
+Querétaro,9.8,2008
+Quintana Roo,20.6,2008
+San Luis Potosí,10.5,2008
+Sinaloa,8.1,2008
+Sonora,7.8,2008
+Tabasco,11.9,2008
+Tamaulipas,8.4,2008
+Tlaxcala,10.8,2008
+Veracruz de Ignacio de la Llave,17.6,2008
+Yucatán,19.7,2008
+Zacatecas,7.1,2008
+estados_unidos_mexicanos,11.8,2008
+Aguascalientes,6.1,2010
+Baja California,6.6,2010
+Baja California Sur,9.0,2010
+Campeche,18.7,2010
+Coahuila de Zaragoza,3.2,2010
+Colima,7.8,2010
+Chiapas,26.9,2010
+Chihuahua,5.2,2010
+Ciudad de México,6.3,2010
+Durango,8.1,2010
+Guanajuato,7.8,2010
+Guerrero,28.5,2010
+Hidalgo,7.4,2010
+Jalisco,5.6,2010
+México,8.9,2010
+Michoacán de Ocampo,12.3,2010
+Morelos,10.4,2010
+Nayarit,8.0,2010
+Nuevo León,5.9,2010
+Oaxaca,18.8,2010
+Puebla,13.1,2010
+Querétaro,8.7,2010
+Quintana Roo,16.6,2010
+San Luis Potosí,9.0,2010
+Sinaloa,5.8,2010
+Sonora,7.4,2010
+Tabasco,14.6,2010
+Tamaulipas,7.6,2010
+Tlaxcala,9.5,2010
+Veracruz de Ignacio de la Llave,14.5,2010
+Yucatán,16.0,2010
+Zacatecas,4.2,2010
+estados_unidos_mexicanos,10.5,2010
+Aguascalientes,3.9,2012
+Baja California,5.6,2012
+Baja California Sur,8.0,2012
+Campeche,14.6,2012
+Coahuila de Zaragoza,4.3,2012
+Colima,7.7,2012
+Chiapas,22.6,2012
+Chihuahua,3.8,2012
+Ciudad de México,5.8,2012
+Durango,6.1,2012
+Guanajuato,7.5,2012
+Guerrero,23.1,2012
+Hidalgo,8.1,2012
+Jalisco,7.9,2012
+México,7.6,2012
+Michoacán de Ocampo,13.0,2012
+Morelos,10.5,2012
+Nayarit,8.1,2012
+Nuevo León,5.5,2012
+Oaxaca,15.6,2012
+Puebla,14.3,2012
+Querétaro,8.2,2012
+Quintana Roo,15.6,2012
+San Luis Potosí,7.7,2012
+Sinaloa,6.1,2012
+Sonora,7.0,2012
+Tabasco,15.1,2012
+Tamaulipas,9.0,2012
+Tlaxcala,11.0,2012
+Veracruz de Ignacio de la Llave,10.1,2012
+Yucatán,16.2,2012
+Zacatecas,4.0,2012
+estados_unidos_mexicanos,9.7,2012
+Aguascalientes,2.4,2014
+Baja California,5.5,2014
+Baja California Sur,12.5,2014
+Campeche,16.5,2014
+Coahuila de Zaragoza,3.7,2014
+Colima,7.9,2014
+Chiapas,20.4,2014
+Chihuahua,5.4,2014
+Ciudad de México,4.5,2014
+Durango,3.7,2014
+Guanajuato,7.4,2014
+Guerrero,24.5,2014
+Hidalgo,4.1,2014
+Jalisco,5.0,2014
+México,7.8,2014
+Michoacán de Ocampo,8.3,2014
+Morelos,10.0,2014
+Nayarit,5.7,2014
+Nuevo León,2.3,2014
+Oaxaca,13.3,2014
+Puebla,13.3,2014
+Querétaro,6.9,2014
+Quintana Roo,14.5,2014
+San Luis Potosí,5.3,2014
+Sinaloa,7.2,2014
+Sonora,7.2,2014
+Tabasco,9.7,2014
+Tamaulipas,6.3,2014
+Tlaxcala,7.4,2014
+Veracruz de Ignacio de la Llave,10.3,2014
+Yucatán,13.4,2014
+Zacatecas,3.9,2014
+estados_unidos_mexicanos,8.5,2014
+Aguascalientes,4.3,2016
+Baja California,4.2,2016
+Baja California Sur,9.9,2016
+Campeche,13.8,2016
+Coahuila de Zaragoza,4.0,2016
+Colima,8.4,2016
+Chiapas,15.9,2016
+Chihuahua,5.9,2016
+Ciudad de México,5.0,2016
+Durango,5.1,2016
+Guanajuato,5.9,2016
+Guerrero,23.1,2016
+Hidalgo,6.6,2016
+Jalisco,4.9,2016
+México,9.6,2016
+Michoacán de Ocampo,8.0,2016
+Morelos,8.0,2016
+Nayarit,6.5,2016
+Nuevo León,3.6,2016
+Oaxaca,14.1,2016
+Puebla,10.2,2016
+Querétaro,7.6,2016
+Quintana Roo,14.9,2016
+San Luis Potosí,4.8,2016
+Sinaloa,8.8,2016
+Sonora,5.8,2016
+Tabasco,8.6,2016
+Tamaulipas,4.5,2016
+Tlaxcala,8.4,2016
+Veracruz de Ignacio de la Llave,10.3,2016
+Yucatán,12.9,2016
+Zacatecas,3.5,2016
+estados_unidos_mexicanos,8.4,2016
+Aguascalientes,3.9,2018
+Baja California,5.9,2018
+Baja California Sur,10.3,2018
+Campeche,14.1,2018
+Coahuila de Zaragoza,3.1,2018
+Colima,5.9,2018
+Chiapas,16.6,2018
+Chihuahua,4.9,2018
+Ciudad de México,4.0,2018
+Durango,3.3,2018
+Guanajuato,7.4,2018
+Guerrero,19.3,2018
+Hidalgo,4.9,2018
+Jalisco,5.2,2018
+México,6.8,2018
+Michoacán de Ocampo,8.1,2018
+Morelos,7.5,2018
+Nayarit,7.5,2018
+Nuevo León,2.1,2018
+Oaxaca,14.2,2018
+Puebla,8.3,2018
+Querétaro,7.0,2018
+Quintana Roo,17.7,2018
+San Luis Potosí,3.9,2018
+Sinaloa,6.0,2018
+Sonora,6.4,2018
+Tabasco,8.4,2018
+Tamaulipas,5.8,2018
+Tlaxcala,7.4,2018
+Veracruz de Ignacio de la Llave,11.4,2018
+Yucatán,11.0,2018
+Zacatecas,3.9,2018
+estados_unidos_mexicanos,7.7,2018
