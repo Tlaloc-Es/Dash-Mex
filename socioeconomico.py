@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+# Esta es la página para las variables socioecnómicas
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
@@ -17,7 +18,8 @@ from chart_generator import generate_pies
 
 from __init__ import *
 
-TITLE = 'Analisis socioeconomico'
+# Se definen las variables de título y figuras, para poder actualizarlas directamente desde las funciones de los callback
+TITLE = 'Análisis socioeconómico'
 
 FIG_A = 'socioeconomico-a'
 FIG_B = 'socioeconomico-b'
@@ -25,6 +27,7 @@ FIG_C = 'socioeconomico-c'
 FIG_D = 'socioeconomico-d'
 FIG_E = 'socioeconomico-e'
 
+# Se generan las opciones para la visualización.
 INDICADORES_SOCIALES = [
     ['porcentaje de la poblacion vulnerable por carencias sociales', VPC, False],
     ['porcentaje de la poblacion vulnerable por ingresos', VPI, False],
@@ -40,6 +43,7 @@ INDICADORES_SOCIALES = [
 
 YEARS = list(range(2008, 2019, 2))
 
+# Se genera el menú de variables para hacer las consultas en esta página
 submenu = [
     html.Br(),
     html.H1("Configuración", className="lead"),
@@ -57,6 +61,7 @@ submenu = [
 
 ]
 
+# Se genera el layout para imprimir los gráficos
 layout = html.Div([
 
     html.Div([
@@ -86,6 +91,7 @@ def difference(df):
     b = df['Porcentage'][df['Año']==2018]
     return round(float(a.values - b.values), 2)
 
+# El callback, esta es la función que generará el gráfico dependiendo de las variable elegidas en el submenu
 @app.callback(
     [Output(FIG_A, 'figure'),
     Output(FIG_B, 'figure'),
@@ -96,12 +102,13 @@ def difference(df):
 )
 def update_social(indicador):
     
+    # Se acceden a las variables globales con el dataset
     global STATES
 
     data = INDICADORES_SOCIALES[int(indicador)][1]
     inverso = INDICADORES_SOCIALES[int(indicador)][2]
     
-
+    # Se copia el dataset en una variable nueva, y se hace la consulta necesaria
     df = data.copy()
     df = df.groupby('Entidad')
     df = df.apply(difference).reset_index()
@@ -111,6 +118,7 @@ def update_social(indicador):
     peores = df.sort_values('Porcentage')[:5]['Entidad'].values
     mejores = df.sort_values('Porcentage')[-5:]['Entidad'].values
 
+    # Dado que algunos datos de caracter lineal son mejores cuando la pendiente desciende y otros cuando la pendiente asciende, de esta manera le damos la vuelta a esos datos, para que la pendiende indique siempre lo mismo con la otra variable con la que se va a comparar
     if inverso:
         fig_b = get_scatter(data.copy(), mejores, 'Estados que peor evolucionan')
         fig_c = get_scatter(data.copy(), peores, 'Estados que mejor evolucionan')
@@ -126,6 +134,7 @@ def update_social(indicador):
     return [fig_a, fig_b, fig_c, fig_d, fig_e]
 
 def get_scatter(data, filter, title):
+    # Esta funcion sirve para generar un scatter plot con mas de una variable
     years = data['Año'].unique()
 
     df = data.copy()
@@ -150,15 +159,13 @@ def get_scatter(data, filter, title):
 
 
 def comparacion(desagregacion=True):
+    # Esta función es para generar un scatter plot, con los datos del precio de la canasta, el precio del dolar, y el indice de libertad economica
+
     global LIBERTAD_MEXICO
     global PESOS
     global LINEAS
 
     df = pd.merge(PESOS, LINEAS, how='right', on=['Fecha'])
-    #df['lpei'] = df['lpei'].pct_change()
-    #df['lpi'] = df['lpi'].pct_change()
-    #df['Price'] = df['Price'].pct_change()
-    #df = df.iloc[4:]
 
     df['lpei'] = df['lpei']/df['lpei'].max()
     df['lpi'] = df['lpi']/df['lpi'].max()
@@ -194,6 +201,7 @@ def comparacion(desagregacion=True):
 
 
 def get_mapas(info, title):
+    # Sirve para generar los mapas, dado que se quiere visualizar mas de un mapa a la vez, el proceso es iterativo
 
     df = info.copy()
     years = df['Año'].unique()

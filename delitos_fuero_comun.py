@@ -1,4 +1,6 @@
 #-*- coding: utf-8 -*-
+# Esta es la página para delitos del fuero común
+
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
@@ -24,6 +26,7 @@ from chart_generator import generate_comparative_chart_top, generate_spline
 
 from __init__ import *
 
+# Se definen las variables de título y figuras, para poder actualizarlas directamente desde las funciones de los callback
 title = 'Víctimas del Fuero Común, 2015 - 2019'
 
 fig_a = 'delito-fuero-a'
@@ -32,19 +35,15 @@ fig_c = 'delito-fuero-c'
 fig_d = 'delito-fuero-d'
 fig_e = 'delito-fuero-e'
 
+# Se carga el dataset que se utiliza en esta página
 DATA = pd.read_csv('./data/delitos/u_nueva_metodologia_fuero_comun.csv')
 YEARS = DATA['Año'].unique()
+
+# Dado que los delitos estan dividos en varias subcategorias, se elige la categoría que serviraá de filtro principal en las consultas
 MAIN_FILTER = 'Tipo de delito'
 TIPOS_DELITO = DATA[MAIN_FILTER].unique()
 
-@app.callback(
-    Output('my-output', 'children'),
-    [Input('url', 'pathname')]
-    )
-def callback_func(pathname):
-    # here you can use the pathname however, just like a normal function input
-    print(pathname)
-
+# Se genera el menú de variables para hacer las consultas en esta página
 submenu = [
     html.Br(),
     html.H1("Configuración", className="lead"),
@@ -82,7 +81,7 @@ submenu = [
     )
 ]
 
-
+# Se genera el layout para imprimir los gráficos
 layout = html.Div([
 
     html.Div([
@@ -107,7 +106,7 @@ layout = html.Div([
 
 ])
 
-
+# El callback, esta es la función que generará el gráfico dependiendo de las variable elegidas en el submenu
 @app.callback(
     [Output(fig_a, 'figure'),
     Output(fig_b, 'figure'),
@@ -120,11 +119,13 @@ layout = html.Div([
 )
 def update_delito(delito, year, options):
     
+    # Se acceden a las variables globales con el dataset
     global MAIN_FILTER
     global STATES
     global YEARS
     global DATA
 
+    # Se copia el dataset en una variable nueva, y se hace la consulta necesaria
     df = DATA.copy()
     df = df[df[MAIN_FILTER]==delito]
     df = df.groupby('Año').sum()
@@ -132,6 +133,7 @@ def update_delito(delito, year, options):
 
     fig_d = px.scatter(df, x='Año', y='Total')
 
+    # Dependiendo de las opciones de visualición seleccionadas se hara uno de los siguientes procesados
     if options == 'Años':
         fig_a = generate_maps(DATA, MAIN_FILTER, delito, 'Total', 'Entidad', STATES, 'properties.NOMGEO', f'Evolución de los casos de {delito} desde {YEARS[0]} hasta {YEARS[-1]}')
         fig_b = generate_spline(DATA, MAIN_FILTER, delito, 'Total', f'Evolucion del numero de {delito} desde {YEARS[0]} hasta {YEARS[-1]}')
@@ -162,4 +164,5 @@ def update_delito(delito, year, options):
         group = ['Año', 'Entidad','Sexo']
         fig_e = generate_parcats_2(DATA, group, filter=MAIN_FILTER, filter_value=delito, year=year, title=f'Nº de {delito} por sexo en {year} en cada cada estado')
 
+    # Se retornan los graficos generados
     return [fig_a, fig_b, fig_c, fig_d, fig_e]

@@ -35,7 +35,7 @@ app.layout = html.Div([
     html.Div(id='page-content', style=CONTENT_STYLE)
 ])
 
-
+# Esta funcion sirve para hacer el routing de la aplicación
 @app.callback(
     [Output('page-content', 'children'),
      Output('custom-nav', 'children')],

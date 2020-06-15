@@ -1,15 +1,23 @@
 #-*- coding: utf-8 -*-
 
+"""
+Esta página es la principal cuando accedes a la aplicación.
+"""
+
 import pandas as pd
 import dash_core_components as dcc
 import dash_html_components as html
 
 from chart_generator import generate_parcats
 
+
+"""Se cargan algunos datasets que van a ser utilizados en esta página"""
+
 nmfc = pd.read_csv('./data/delitos/u_nueva_metodologia_fuero_comun.csv')
 nmdf = pd.read_csv('./data/delitos/u_nueva_metodologia_delictiva_federal.csv')
 vmdf = pd.read_csv('./data/delitos/u_vieja_metodologia_delictiva_estatal.csv')
 
+"""Se van a generar los parcats que se ven en la página principal, y es necesario indicarles las dimensiones"""
 dimensiones_a = ['Bien jurídico afectado', 'Tipo de delito', 'Subtipo de delito']
 dimensiones_b = ['Ley', 'Concepto', 'Tipo']
 dimensiones_c = ['Modalidad', 'Tipo', 'Subtipo']
@@ -18,7 +26,7 @@ fig_a = generate_parcats(nmfc, dimensiones_a, 'Disposicion de los delitos para n
 fig_b = generate_parcats(nmdf, dimensiones_b, 'Disposicion de los delitos para nueva metodología de incidencia delictiva federal')
 fig_c = generate_parcats(vmdf, dimensiones_c, 'Disposicion de los delitos para vieja metodología de incidencia delictiva estatal')
 
-
+"""Se escribe el contenido de la página index, usando notacion markdown, con algo de información referente a los datasets."""
 index_page = html.Div([
     dcc.Markdown('''
         # Criminalidad
@@ -63,10 +71,6 @@ index_page = html.Div([
         * Enlace: https://datos.gob.mx/busca/dataset/indicadores-de-pobreza-2008-2018-nacional-y-estatal/resource/da89fadd-0f0e-425a-a7bb-154d091a51d7
         
         Porcentaje de la poblacion vulnerable por ingresos, 2008 - 2018
-        * Dataset: Porcentaje, número de personas y carencias promedio por indicador de pobreza, según entidad federativa, 2008-2018, parte II
-        * Enlace: https://datos.gob.mx/busca/dataset/indicadores-de-pobreza-2008-2018-nacional-y-estatal/resource/da89fadd-0f0e-425a-a7bb-154d091a51d7
-        
-        Porcentaje de la poblacion no pobre y no vulnerable, 2008 - 2018
         * Dataset: Porcentaje, número de personas y carencias promedio por indicador de pobreza, según entidad federativa, 2008-2018, parte II
         * Enlace: https://datos.gob.mx/busca/dataset/indicadores-de-pobreza-2008-2018-nacional-y-estatal/resource/da89fadd-0f0e-425a-a7bb-154d091a51d7
         

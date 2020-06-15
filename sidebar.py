@@ -4,7 +4,8 @@ from dash.dependencies import Input, Output, State
 
 from __init__ import app
 
-# the style arguments for the sidebar. We use position:fixed and a fixed width
+# Estas funciones son solo para establecer el sidebar del dasboard con su estilo y los menus
+
 SIDEBAR_STYLE = {
     "position": "fixed",
     "top": 0,
