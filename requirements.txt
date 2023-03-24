@@ -1,8 +1,8 @@
-dash
-pandas
-geopandas
-matplotlib
-descartes
-dash_bootstrap_components
+dash==1.13.4
+pandas==1.0.5
+geopandas==0.7.0
+matplotlib==3.2.2
+descartes==1.1.0
+dash_bootstrap_components==0.10.3
 gunicorn
-plotly
+plotly==5.0.0
