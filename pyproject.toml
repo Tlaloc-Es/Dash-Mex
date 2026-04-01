@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dash_mex"
+version = "0.1.0"
+description = "Dashboard de criminalidad y variables socioeconomicas en Mexico"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Dash-Mex contributors" }]
+dependencies = [
+    "dash>=2.18.0,<3.0.0",
+    "pandas>=2.2.0,<3.0.0",
+    "geopandas>=0.14.0,<1.0.0",
+    "matplotlib>=3.8.0,<4.0.0",
+    "dash_bootstrap_components>=1.6.0,<2.0.0",
+    "gunicorn>=21.2.0,<22.0.0",
+    "plotly>=5.22.0,<6.0.0",
+    "Werkzeug>=3.0.0,<4.0.0",
+    "shapely>=2.0.0,<3.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0,<9.0.0", "ruff>=0.6.0,<1.0.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dash_mex*"]
+exclude = ["assets*", "data*", "config*", "services*", "tests*"]
+
+[tool.poe.tasks]
+git_hooks_run = "pre-commit run --all-files"
+git_hooks_install = "pre-commit install"
+git_hooks_update = "pre-commit autoupdate"
+test = "pytest"
+test-cov = "pytest --cov=labelme_to_yolo --cov-report=term-missing --cov-report=html"
